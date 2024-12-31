@@ -92,7 +92,7 @@ const App = () => {
         ]
         }
     ];
-    const [unitProduct,setUnitProduct] =useState(products[0]); 
+    const [unitProduct,setUnitProduct] =useState(null); 
     // 畫面
     return (<>
         <div className="container mt-5">
@@ -116,7 +116,11 @@ const App = () => {
                 </div>
                 <div className="col-md-6">
                     <h2 className="h2">單一產品細節</h2>
-                    <Card unitProduct={unitProduct}/>
+                    {
+                        unitProduct ? (<Card unitProduct={unitProduct}/>)
+                        :(<p className="text-secondary">請選擇一個商品查看</p>)
+                    }
+                    
                 </div>
             </div>
         </div>
